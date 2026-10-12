@@ -1,0 +1,56 @@
+# Builds an UNSIGNED iPhone .ipa on GitHub's cloud Mac (no Xcode needed locally).
+# Sign + install it with a sideloading tool (3uTools, Sideloadly, AltStore…) using
+# your Apple ID; free Apple IDs give 7-day installs. Run from the Actions tab or:
+#   gh workflow run ios-ipa.yml
+name: iOS IPA (unsigned)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Generate the native iOS project
+        run: npx expo prebuild -p ios --clean
+        env:
+          CI: 1
+
+      - name: Install CocoaPods dependencies
+        run: cd ios && pod install
+
+      - name: Build (no code signing)
+        run: |
+          set -o pipefail
+          WS=$(ls -d ios/*.xcworkspace | head -1)
+          SCHEME=$(basename "$WS" .xcworkspace)
+          echo "Workspace $WS, scheme $SCHEME"
+          xcodebuild -version
+          xcodebuild -workspace "$WS" -scheme "$SCHEME" -configuration Release \
+            -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            build | grep -E "error:|warning: .*deprecated|\*\* BUILD" || true
+          test -d build/Build/Products/Release-iphoneos/"$SCHEME".app
+
+      - name: Package .ipa
+        run: |
+          APP=$(ls -d build/Build/Products/Release-iphoneos/*.app | head -1)
+          mkdir -p Payload && cp -R "$APP" Payload/
+          zip -qry HunterSeeker-unsigned.ipa Payload
+          ls -la HunterSeeker-unsigned.ipa
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HunterSeeker-ipa
+          path: HunterSeeker-unsigned.ipa
+          retention-days: 30

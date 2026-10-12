@@ -1,25 +1,78 @@
 {
   "expo": {
-    "name": "hunter-seeker",
+    "name": "Hunter Seeker",
     "slug": "hunter-seeker",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.nareshchoudhary.hunterseeker",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Scan QR codes to join games and catch hiders.",
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "buildNumber": "1"
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#07090d",
         "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.nareshchoudhary.hunterseeker",
+      "versionCode": 1
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Hunter Seeker shares your location with the other players during a game.",
+          "locationAlwaysAndWhenInUsePermission": "During a game, Hunter Seeker keeps sharing your location with the screen locked so pings work. It stops as soon as the game ends.",
+          "isIosBackgroundLocationEnabled": true,
+          "isAndroidBackgroundLocationEnabled": true,
+          "isAndroidForegroundServiceEnabled": true
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Scan QR codes to join games and catch hiders.",
+          "recordAudioAndroid": false
+        }
+      ],
+      "expo-font",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": false,
+          "recordAudioAndroid": false,
+          "enableBackgroundPlayback": false
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 180,
+          "resizeMode": "contain",
+          "backgroundColor": "#07090d"
+        }
+      ],
+      "expo-asset"
+    ],
+    "scheme": "hunterseeker",
+    "backgroundColor": "#07090d",
+    "experiments": {
+      "typedRoutes": false
     }
   }
 }

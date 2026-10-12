@@ -1,0 +1,30 @@
+{
+  "en": [
+    "Welcome to Hunter Seeker! It's hide and seek, but for real. Across your whole neighbourhood, with your phones.",
+    "First, the host draws the zone on the map. Everyone has to stay inside it.",
+    "Next, pick your roles. Hiders hide. Hunters chase, and catch. Seekers scout around, and spot.",
+    "Hiders get a head start. They run off to hide, while the hunters and seekers wait at the start.",
+    "Then, every few minutes... ping! Each hider's exact location shows up for the hunters. Go, go, go!",
+    "Hiders, here's the trick. Move right after a ping. You're invisible until the next one.",
+    "Seekers don't get the exact spot. Just a rough circle. But they get it more often.",
+    "If a seeker actually sees a hider, they hit Spot. If they're really close, the hunters get the exact location.",
+    "To catch someone, tag them, then scan the code on their phone. And they're out!",
+    "Watch the zone! Step outside, and you're frozen. Hiders who leave get their location broadcast to everyone.",
+    "Safety first. Anyone can pause the game, or send an SOS. The clock stops for everyone.",
+    "Hiders win if anyone survives to the end. Hunters win by catching everyone. That's it. Now go play!"
+  ],
+  "hi": [
+    "हंटर सीकर में आपका स्वागत है! ये है असली लुका-छिपी, पूरे मोहल्ले में, अपने फ़ोन के साथ।",
+    "सबसे पहले, होस्ट मैप पर ज़ोन बनाता है। सबको इसी ज़ोन के अंदर रहना है।",
+    "फिर अपना रोल चुनो। हाइडर्स छिपते हैं। हंटर्स पीछा करके पकड़ते हैं। और सीकर्स ढूँढते हैं।",
+    "हाइडर्स को हेड स्टार्ट मिलता है। वो भागकर छिप जाते हैं, और बाकी सब शुरुआत वाली जगह पर रुकते हैं।",
+    "फिर हर कुछ मिनट में, पिंग! हर हाइडर की सही लोकेशन हंटर्स को दिख जाती है। भागो!",
+    "हाइडर्स, एक ट्रिक सुनो। पिंग होते ही जगह बदल लो। अगले पिंग तक, तुम किसी को नहीं दिखोगे।",
+    "सीकर्स को सही जगह नहीं दिखती, बस एक सर्कल दिखता है। लेकिन, जल्दी-जल्दी।",
+    "अगर सीकर को हाइडर सच में दिख जाए, तो वो स्पॉट दबाता है। अगर वो पास है, तो हंटर्स को सही लोकेशन मिल जाती है।",
+    "पकड़ने के लिए, हाइडर को छुओ, और उसके फ़ोन का कोड स्कैन करो। बस, वो आउट!",
+    "ज़ोन का ध्यान रखना! बाहर गए, तो फ़्रीज़ हो जाओगे। और अगर हाइडर बाहर गया, तो सबको उसकी लोकेशन दिख जाएगी।",
+    "सेफ़्टी सबसे पहले। कोई भी गेम पॉज़ कर सकता है, या एस-ओ-एस भेज सकता है। सबका टाइमर रुक जाता है।",
+    "अगर एक भी हाइडर आख़िर तक बच गया, तो हाइडर्स जीत जाते हैं। सबको पकड़ लिया, तो हंटर्स जीत जाते हैं। बस इतना ही, चलो खेलते हैं!"
+  ]
+}
